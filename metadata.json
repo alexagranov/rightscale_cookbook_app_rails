@@ -1,0 +1,35 @@
+{
+  "recommendations": {
+  },
+  "maintainer_email": "alex@morphogenic.net",
+  "name": "app_rails",
+  "version": "0.1",
+  "dependencies": {
+    "rightscale": ">= 0.0.0",
+    "app": ">= 0.0.0"
+  },
+  "license": "GNU GPL v2",
+  "recipes": {
+    "app_php::setup_server": "Configures the server to host a Rails app."
+  },
+  "attributes": {
+  },
+  "conflicting": {
+  },
+  "suggestions": {
+  },
+  "providing": {
+  },
+  "description": "Cookbook provides generic Rails implementation of the 'app' LWRP.  Only configures the app server machine to properly take part in the RightScale ecosystem - up to you to deploy your app code via Capistrano or similar.",
+  "replacing": {
+  },
+  "long_description": "",
+  "groupings": {
+  },
+  "maintainer": "Morphogenic Corp.",
+  "platforms": {
+    "ubuntu": ">= 0.0.0",
+    "redhat": ">= 0.0.0",
+    "centos": ">= 0.0.0"
+  }
+}
