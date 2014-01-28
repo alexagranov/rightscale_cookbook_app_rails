@@ -10,7 +10,7 @@
   },
   "license": "GNU GPL v2",
   "recipes": {
-    "app_php::setup_server": "Configures the server to host a Rails app."
+    "app_rails::setup_server": "Configures the server to host a Rails app."
   },
   "attributes": {
   },
