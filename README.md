@@ -1,7 +1,7 @@
 app_rails
 =========
 
-A Chef cookbook that implements RightScale's LWRP interface for a generic Rails app server on port 3000.
+A Chef cookbook that implements RightScale's LWRP 'app' interface for a generic Rails app server on port 3000.
 
 RightScale has some nice cookbooks for managing servers (attaching/detaching from ELB, monitoring, etc.).
 
