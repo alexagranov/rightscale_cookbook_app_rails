@@ -3,7 +3,7 @@
   },
   "maintainer_email": "alex@morphogenic.net",
   "name": "app_rails",
-  "version": "0.1",
+  "version": "0.2",
   "dependencies": {
     "rightscale": ">= 0.0.0",
     "app": ">= 0.0.0"
@@ -23,7 +23,7 @@
   "description": "Cookbook provides generic Rails implementation of the 'app' LWRP.  Only configures the app server machine to properly take part in the RightScale ecosystem - up to you to deploy your app code via Capistrano or similar.",
   "replacing": {
   },
-  "long_description": "",
+  "long_description": "# App Rails Cookbook \n\n## DESCRIPTION:\n\n* Cookbook provides generic Rails implementation of the app LWRP.\n\n## REQUIREMENTS:\n\n* Requires [\"app\" Lightweight resource cookbook][app] or your own implementation\n  of the \"app\" resource. See \"app\" cookbook README for details.\n* Requires a VM launched from a RightScale managed RightImage\n\n[app]: https://github.com/rightscale/rightscale_cookbooks/tree/master/cookbooks/app\n\n## COOKBOOKS DEPENDENCIES:\n\nPlease see `metadata.rb` file for the latest dependencies.\n\n* `rightscale`\n* `app`\n\n## SETUP/USAGE:\n\n* Place `app_rails::setup_server` recipe into your runlist to set up\n  the application server specific attributes. This sets up the app provider and\n  version.\n* Place `app::install_server` recipe after setup_server recipe to configure server tags that the rest of the RightScale ecosystem such as ELB, monitoring, etc. will make use of.\n\n",
   "groupings": {
   },
   "maintainer": "Morphogenic Corp.",
