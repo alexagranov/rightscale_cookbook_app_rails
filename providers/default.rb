@@ -32,3 +32,7 @@ action :install do
   log "  Nothing to do for install."
 end
 
+action :setup_monitoring do
+  # nothing here yet...
+  log "  Not setting up monitoring here yet..."
+end
