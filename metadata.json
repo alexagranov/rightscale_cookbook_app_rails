@@ -3,7 +3,7 @@
   },
   "maintainer_email": "alex@morphogenic.net",
   "name": "app_rails",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "dependencies": {
     "rightscale": ">= 0.0.0",
     "app": ">= 0.0.0"
