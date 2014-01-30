@@ -16,7 +16,7 @@
     "app/destination": {
       "display_name": "App Root Directory",
       "description": "Specify the full path that will serve as app root.  Default: /home/webapps/myapp",
-      "required": "required",
+      "required": "optional",
       "default": "/home/webapps/myapp",
       "recipes": [
         "app::install_server",

@@ -24,5 +24,5 @@ attribute "app/destination",
     "Specify the full path that will serve as app root.  Default: /home/webapps/myapp",
   :default => "/home/webapps/myapp",
   :recipes => ["app::install_server", "app_rails::setup_server"],
-  :required => "required"
+  :required => "optional"
 
