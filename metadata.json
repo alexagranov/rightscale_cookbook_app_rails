@@ -13,6 +13,20 @@
     "app_rails::setup_server": "Configures the server to host a Rails app."
   },
   "attributes": {
+    "app/destination": {
+      "display_name": "App Root Directory",
+      "description": "Specify the full path that will serve as app root.  Default: /home/webapps/myapp",
+      "choice": [
+
+      ],
+      "required": "optional",
+      "default": "/home/webapps/myapp",
+      "recipes": [
+        "app::install_server"
+      ],
+      "calculated": false,
+      "type": "string"
+    }
   },
   "conflicting": {
   },
