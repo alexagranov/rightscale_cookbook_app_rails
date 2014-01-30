@@ -3,4 +3,3 @@
 #
 # Copyright GNU GPL v2
 
-default[:app][:destination] = "/home/webapps/myapp"
