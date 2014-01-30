@@ -18,3 +18,11 @@ depends "rightscale"
 recipe "app_rails::setup_server",
   "Configures the server to host a Rails app."
 
+attribute "app/destination",
+  :display_name => "App Root Directory",
+  :description =>
+    "Specify the full path that will serve as app root.  Default: /home/webapps/myapp",
+  :default => "/home/webapps/myapp",
+  :recipes => ["app::install_server"],
+  :required => "optional"
+
