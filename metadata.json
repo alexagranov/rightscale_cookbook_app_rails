@@ -16,13 +16,11 @@
     "app/destination": {
       "display_name": "App Root Directory",
       "description": "Specify the full path that will serve as app root.  Default: /home/webapps/myapp",
-      "choice": [
-
-      ],
-      "required": "optional",
+      "required": "required",
       "default": "/home/webapps/myapp",
       "recipes": [
-        "app::install_server"
+        "app::install_server",
+        "app_rails::setup_server"
       ],
       "calculated": false,
       "type": "string"
