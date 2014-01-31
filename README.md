@@ -14,5 +14,5 @@ You should still change your `app/port` input to `3000` (or whatever you like) f
 that are used by the 'app' cookbook to create the application root dir.  We're not using Apache here but without cloning 'app' cookbook this gets us what we need.
 
 ###Recipes  
-``app_rails::setup_app_user   Setup the user/group account to execute the Rails application.``  
-``app_rails::setup_server     Configures the server to host a Rails app.``  
+``app_rails::setup_app_user - Setup the user/group account to execute the Rails application.``  
+``app_rails::setup_server - Configures the server to host a Rails app.``  
