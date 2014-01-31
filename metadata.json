@@ -3,7 +3,7 @@
   },
   "maintainer_email": "alex@morphogenic.net",
   "name": "app_rails",
-  "version": "0.3.2",
+  "version": "0.4",
   "dependencies": {
     "rightscale": ">= 0.0.0",
     "app": ">= 0.0.0"
@@ -13,6 +13,28 @@
     "app_rails::setup_server": "Configures the server to host a Rails app."
   },
   "attributes": {
+    "app_rails/group": {
+      "display_name": "Rails User Group",
+      "description": "The name of the group account for the user that will execute the Rails application.",
+      "required": "optional",
+      "default": "mygroup",
+      "recipes": [
+        "app_rails::setup_app_user"
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "app_rails/user": {
+      "display_name": "Rails User",
+      "description": "The name of the user account that will execute the Rails application.",
+      "required": "optional",
+      "default": "myuser",
+      "recipes": [
+        "app_rails::setup_app_user"
+      ],
+      "calculated": false,
+      "type": "string"
+    },
     "repo/default/destination": {
       "display_name": "Home Directory for Application",
       "description": "Specify path that will host GIT repo.  Ex: /home/webapps",
