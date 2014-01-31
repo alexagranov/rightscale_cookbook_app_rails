@@ -6,7 +6,7 @@ description      "Cookbook provides generic Rails implementation of the 'app'" +
                  " take part in the RightScale ecosystem - up to you to deploy" +
                  " your app code via Capistrano or similar."
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          "0.3.1"
+version          "0.3.2"
 
 supports "centos"
 supports "redhat"
@@ -18,11 +18,19 @@ depends "rightscale"
 recipe "app_rails::setup_server",
   "Configures the server to host a Rails app."
 
-attribute "app/destination",
-  :display_name => "App Root Directory",
+attribute "repo/default/destination",
+  :display_name => "Home Directory for Application",
   :description =>
-    "Specify the full path that will serve as app root.  Default: /home/webapps/myapp",
-  :default => "/home/webapps/myapp",
+    "Specify path that will host GIT repo.  Ex: /home/webapps",
+  :default => "/home/webapps",
+  :recipes => ["app::install_server", "app_rails::setup_server"],
+  :required => "optional"
+
+attribute "web_apache/application_name",
+  :display_name => "Application Name",
+  :description =>
+    "This will be used to create the app root path.  We're not using Apache but 'app' cookbook is hardcoded to look for this attribute when creating the app root dir",
+  :default => "myapp",
   :recipes => ["app::install_server", "app_rails::setup_server"],
   :required => "optional"
 

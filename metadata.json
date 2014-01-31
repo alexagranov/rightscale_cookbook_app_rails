@@ -3,7 +3,7 @@
   },
   "maintainer_email": "alex@morphogenic.net",
   "name": "app_rails",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "dependencies": {
     "rightscale": ">= 0.0.0",
     "app": ">= 0.0.0"
@@ -13,11 +13,23 @@
     "app_rails::setup_server": "Configures the server to host a Rails app."
   },
   "attributes": {
-    "app/destination": {
-      "display_name": "App Root Directory",
-      "description": "Specify the full path that will serve as app root.  Default: /home/webapps/myapp",
+    "repo/default/destination": {
+      "display_name": "Home Directory for Application",
+      "description": "Specify path that will host GIT repo.  Ex: /home/webapps",
       "required": "optional",
-      "default": "/home/webapps/myapp",
+      "default": "/home/webapps",
+      "recipes": [
+        "app::install_server",
+        "app_rails::setup_server"
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "web_apache/application_name": {
+      "display_name": "Application Name",
+      "description": "This will be used to create the app root path.  We're not using Apache but 'app' cookbook is hardcoded to look for this attribute when creating the app root dir",
+      "required": "optional",
+      "default": "myapp",
       "recipes": [
         "app::install_server",
         "app_rails::setup_server"
