@@ -10,7 +10,8 @@
   },
   "license": "GNU GPL v2",
   "recipes": {
-    "app_rails::setup_server": "Configures the server to host a Rails app."
+    "app_rails::setup_server": "Configures the server to host a Rails app.",
+    "app_rails::setup_app_user": "Setup the user/group account to execute the Rails application."
   },
   "attributes": {
     "app_rails/group": {

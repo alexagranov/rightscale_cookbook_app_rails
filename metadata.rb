@@ -18,6 +18,9 @@ depends "rightscale"
 recipe "app_rails::setup_server",
   "Configures the server to host a Rails app."
 
+recipe "app_rails::setup_app_user",
+  "Setup the user/group account to execute the Rails application."
+
 attribute "repo/default/destination",
   :display_name => "Home Directory for Application",
   :description =>
