@@ -7,8 +7,8 @@ RightScale has some nice cookbooks for managing servers (attaching/detaching fro
 
 I'd like to boot a new server that fits well into the RightScale ecosystem while still maintaining the ability to remotely deploy the actual app server code via Capistrano.
 
-You should still change your `app/port` input to `3000` (or whatever you like) for a standard Rails app, but this cookbook also exposes
-    repo/default/destination
-    web_apache/application_name
+You should still change your `app/port` input to `3000` (or whatever you like) for a standard Rails app, but this cookbook also exposes  
+    ``repo/default/destination``  
+    ``web_apache/application_name``  
 
-that are used by the 'app' cookbook to create the application root dir.
+that are used by the 'app' cookbook to create the application root dir.  We're not using Apache here but without cloning 'app' cookbook this gets us what we need.
