@@ -21,5 +21,6 @@ user node[:app_rails][:user] do
   shell "/bin/bash"
   system true
   supports :manage_home => true
+  home "/home/gbadmin"
 end
 
