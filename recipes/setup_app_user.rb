@@ -16,9 +16,10 @@ end
 
 # ...then create the user
 user node[:app_rails][:user] do
+  action :create
   gid node[:app_rails][:group]
   shell "/bin/bash"
   system true
-  action :create
+  supports :manage_home => true
 end
 
