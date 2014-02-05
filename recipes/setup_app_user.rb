@@ -10,7 +10,6 @@ log "  Setup the user/group account to execute the Rails application."
 # create the group first
 group node[:app_rails][:group] do
   action :create
-  system true
   append true
 end
 
@@ -19,7 +18,6 @@ user node[:app_rails][:user] do
   action :create
   gid node[:app_rails][:group]
   shell "/bin/bash"
-  system true
   supports :manage_home => true
   home "/home/gbadmin"
 end
