@@ -6,7 +6,7 @@ description      "Cookbook provides generic Rails implementation of the 'app'" +
                  " take part in the RightScale ecosystem - up to you to deploy" +
                  " your app code via Capistrano or similar."
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          "0.5"
+version          "0.5.1"
 
 supports "centos"
 supports "redhat"
@@ -44,7 +44,7 @@ attribute "app_rails/user",
   :display_name => "Rails User",
   :description => "The name of the user account that will execute the Rails application.",
   :default => "myuser",
-  :recipes => ["app_rails::setup_app_user"],
+  :recipes => ["app_rails::setup_app_user", "app_rails::install_rvm"],
   :required => "optional"
 
 attribute "app_rails/group",

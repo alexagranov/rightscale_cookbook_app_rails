@@ -3,7 +3,7 @@
   },
   "maintainer_email": "alex@morphogenic.net",
   "name": "app_rails",
-  "version": "0.5",
+  "version": "0.5.1",
   "dependencies": {
     "rightscale": ">= 0.0.0",
     "app": ">= 0.0.0"
@@ -32,7 +32,8 @@
       "required": "optional",
       "default": "myuser",
       "recipes": [
-        "app_rails::setup_app_user"
+        "app_rails::setup_app_user",
+        "app_rails::install_rvm"
       ],
       "calculated": false,
       "type": "string"
