@@ -19,6 +19,6 @@ user node[:app_rails][:user] do
   gid node[:app_rails][:group]
   shell "/bin/bash"
   supports :manage_home => true
-  home "/home/gbadmin"
+  home "/home/"+node[:app_rails][:user]
 end
 
