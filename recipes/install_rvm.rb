@@ -8,8 +8,8 @@ rightscale_marker
 log "  Install RVM."
 
 bash "install_rvm" do
-  user node['app_rails']['user']
-  cwd "/home/"+node['app_rails"]['user']
+  user "#{node['app_rails']['user']}"
+  cwd "/home/#{node['app_rails']['user']}"
   code <<-EOH
   curl -sSL https://get.rvm.io | bash -s stable --ruby
   EOH
