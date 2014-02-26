@@ -26,7 +26,7 @@ action :restart do
   sleep 5
 end
 
-# Installs packages and modules required for PHP application server.
+# Installs packages and modules required for Rails application server.
 action :install do
   # nothing to do
   log "  Nothing to do for install."
