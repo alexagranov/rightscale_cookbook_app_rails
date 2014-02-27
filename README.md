@@ -16,3 +16,4 @@ that are used by the 'app' cookbook to create the application root dir.  We're n
 ###Recipes  
 ``app_rails::setup_app_user - Setup the user/group account to execute the Rails application.``  
 ``app_rails::setup_server - Configures the server to host a Rails app.``  
+``app_rails::install_rvm - Installs latest stable RVM with default Ruby.``  
