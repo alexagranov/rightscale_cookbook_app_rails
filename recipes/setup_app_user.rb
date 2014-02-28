@@ -22,3 +22,9 @@ user node[:app_rails][:user] do
   home "/home/"+node[:app_rails][:user]
 end
 
+# rvm group should have been made already by 'install_rvm' recipe
+group "rvm" do
+  action :modify
+  append true
+  members "#{node[:app_rails][:user]}"
+end
