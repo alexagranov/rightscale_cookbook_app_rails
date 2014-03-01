@@ -6,7 +6,7 @@ description      "Cookbook provides generic Rails implementation of the 'app'" +
                  " take part in the RightScale ecosystem - up to you to deploy" +
                  " your app code via Capistrano or similar."
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          "0.6.3"
+version          "0.6.4"
 
 supports "centos"
 supports "redhat"

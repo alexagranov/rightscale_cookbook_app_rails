@@ -57,3 +57,10 @@ end
 execute "give deploy user ownership of deploy destination" do
   command "chown -R #{node[:app_rails][:user]}:#{node[:app_rails][:group]} #{node[:repo][:default][:destination]}"
 end
+
+# add deploy user to sudoers
+bash "add deploy user to sudoers" do
+  code <<-EOH
+    echo "#{node[:app_rails][:user]} ALL=(ALL)NOPASSWD: ALL" >> /etc/sudoers
+  EOH
+end
