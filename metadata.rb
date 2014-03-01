@@ -6,7 +6,7 @@ description      "Cookbook provides generic Rails implementation of the 'app'" +
                  " take part in the RightScale ecosystem - up to you to deploy" +
                  " your app code via Capistrano or similar."
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          "0.5.7"
+version          "0.6"
 
 supports "centos"
 supports "redhat"
@@ -29,7 +29,7 @@ attribute "repo/default/destination",
   :description =>
     "Specify path that will host GIT repo.  Ex: /home/webapps",
   :default => "/home/webapps",
-  :recipes => ["app::install_server", "app_rails::setup_server"],
+  :recipes => ["app::install_server", "app_rails::setup_server", "app_rails::setup_app_user],
   :required => "optional"
 
 attribute "web_apache/application_name",
@@ -51,6 +51,13 @@ attribute "app_rails/group",
   :display_name => "Rails User Group",
   :description => "The name of the group account for the user that will execute the Rails application.",
   :default => "mygroup",
+  :recipes => ["app_rails::setup_app_user"],
+  :required => "optional"
+
+attribute "app_rails/authorized_keys",
+  :display_name => "Authorized SSH Keys",
+  :description => "Public SSH keys for users allowed to deploy.",
+  :default => "",
   :recipes => ["app_rails::setup_app_user"],
   :required => "optional"
 

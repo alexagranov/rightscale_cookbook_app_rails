@@ -3,7 +3,7 @@
   },
   "maintainer_email": "alex@morphogenic.net",
   "name": "app_rails",
-  "version": "0.5.7",
+  "version": "0.6",
   "dependencies": {
     "rightscale": ">= 0.0.0",
     "app": ">= 0.0.0"
@@ -38,6 +38,17 @@
       "calculated": false,
       "type": "string"
     },
+    "app_rails/authorized_keys": {
+      "display_name": "Authorized SSH Keys",
+      "description": "Public SSH keys for users allowed to deploy.",
+      "required": "optional",
+      "default": "",
+      "recipes": [
+        "app_rails::setup_app_user"
+      ],
+      "calculated": false,
+      "type": "string"
+    },
     "repo/default/destination": {
       "display_name": "Home Directory for Application",
       "description": "Specify path that will host GIT repo.  Ex: /home/webapps",
@@ -45,7 +56,8 @@
       "default": "/home/webapps",
       "recipes": [
         "app::install_server",
-        "app_rails::setup_server"
+        "app_rails::setup_server",
+        "app_rails::setup_app_user"
       ],
       "calculated": false,
       "type": "string"
