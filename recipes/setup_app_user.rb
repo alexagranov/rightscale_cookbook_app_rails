@@ -42,7 +42,7 @@ end
 # allow authorized users to deploy over SSH as deploy user
 bash "populate_authorized_keys" do
   code <<-EOH
-    echo "#{node[:app_rails][:authorized_keys]}" > auth_key_file
+    echo "#{node[:app_rails][:authorized_keys]}" > #{auth_key_file}
   EOH
 end
 
