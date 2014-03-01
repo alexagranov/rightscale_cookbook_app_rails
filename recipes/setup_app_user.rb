@@ -54,8 +54,6 @@ group "rvm" do
 end
 
 # give deploy user ownership over deploy directory
-directory "#{node[:repo][:default][:destination]}" do
-  owner "#{node[:app_rails][:user]}"
-  group "#{node[:app_rails][:group]}"
-  action :modify
+execute "give deploy user ownership of deploy destination" do
+  command "chown -R #{node[:app_rails][:user]}:#{node[:app_rails][:group]} #{node[:repo][:default][:destination]}"
 end
